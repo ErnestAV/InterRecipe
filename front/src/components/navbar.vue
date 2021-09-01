@@ -9,7 +9,7 @@
             </div>
             <div class="flex flex-col md:flex-row">
                 <div v-show="!logged">
-                    <router-link class="py-1 text-white px-6 bg-red-600 rounded-full " to="/signup">Sign in</router-link>
+                    <router-link class="py-1 text-white px-6 bg-red-600 rounded-full " to="/signup">Sign up</router-link>
                     <router-link class="py-1 text-white px-6 ml-4 bg-red-600 rounded-full " to="/login">Log in</router-link>
                 </div>
                 <div class="flex flex-row" v-if="logged">
@@ -24,7 +24,7 @@
                         </div>    
                     </div>
                     <div class="flex items-center px-5">
-                        <button @click="closeSession" class="bg-red-600 py-1 px-4 rounded text-white">Sign out</button>
+                        <button @click="closeSession" class="bg-red-600 py-1 px-4 rounded text-white">Log out</button>
                     </div>
                 </div>
             </div> 

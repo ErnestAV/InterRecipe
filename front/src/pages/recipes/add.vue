@@ -15,7 +15,7 @@
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                    Title
+                    Description
                 </label>
                 <textarea v-model="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="text" placeholder="Description"/>
             </div>
@@ -25,7 +25,7 @@
                 </label>
                 <div class="md:flex w-full items-center">
                     <div class="w-full pr-1">
-                        <input v-model="item" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Type your ingredient here...">
+                        <input v-model="item" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Enter one ingredient at a time...">
                     </div>
                     <div class="h-full p-1 mt-5 md:mt-0">
                         <a  @click="addIngredient" class="bg-red-500 py-2 text-white px-6 rounded">Add</a>
