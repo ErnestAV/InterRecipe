@@ -3,14 +3,6 @@ const express = require("express");
 const router = express.Router();
 const validateTokenMiddleware = require('./middlewares/auth-token')
 const utilJWT = require('./utils/jwt')
-// Configure multer so that it will upload to '/public/recipes'
-// const multer = require('multer')
-// const upload = multer({
-//   dest: '/public/',
-//   limits: {
-//     fileSize: 50000000
-//   }
-// });
 
 const users = require("./users.js");
 const User = users.model;
@@ -33,8 +25,7 @@ const recipeSchema = new mongoose.Schema({
 
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
-// upload photo
-//upload.single('recipe')
+//subir una receta
 router.post("/", validateTokenMiddleware, async (req, res) => {
     // chequear parametros
     // if (!req.file)
@@ -62,6 +53,7 @@ router.post("/", validateTokenMiddleware, async (req, res) => {
     }
 });
 
+//editar una receta
 router.put('/:id/edit', async (req, res) => {
   try {
     const findRecipe = await Recipe.findById({_id: req.params.id})
@@ -156,6 +148,8 @@ router.get("/:id", async (req, res) => {
     return res.sendStatus(500);
   }
 });
+
+//eleminar una receta
 router.delete("/:id", validateTokenMiddleware ,async (req, res) => {
   try {
     await Recipe.deleteOne({_id:req.params.id})
