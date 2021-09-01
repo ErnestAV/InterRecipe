@@ -13,6 +13,7 @@
                 <div v-if="!isLoading">
                     <ListRecipes :recipes="recipes"/>
                 </div>
+                <Footer/>
             </div>
         </div>
 </template>
@@ -20,13 +21,15 @@
 import Navbar from '../components/navbar.vue'
 import Banner from '../components/banner.vue'
 import ListRecipes from '../components/recipes/list.vue'
+import Footer from '../components/footer.vue'
 import {popularRecipes} from '../constants/recipe'
 export default {
     name:'landing',
     components:{
         Navbar,
         Banner,
-        ListRecipes
+        ListRecipes,
+        Footer
     },
     methods: {
         async getPopularRecipes() {
